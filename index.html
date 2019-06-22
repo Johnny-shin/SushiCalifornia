@@ -69,8 +69,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   
     <!--insta test -->
-        <div id="insta-feed">
-          
+        <div id="instafeed">
+
         </div>
     <script type="text/javascript">
       $(function(){ 
@@ -95,13 +95,16 @@
           userFeed.run();
           }); 
       </script>
-        
+        <div id="instafeed2"></div>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="js/instafeed.min.js"></script>
+        <script type="text/javascript"></script>
         <script type="text/javascript">
           var feed = new Instafeed({
               get: 'user',
-              target : 'instafeed',
-              tagName: 'awesome',
-              clientId: '0d9889f1726a483699334996b85b7a61',
+              target : 'instafeed2',
+              userId: '6911797675',
+              accessToken: '6911797675.0d9889f.09b7867881154131906b4125cc008dbe', 
               template: '<a href="{{link}}"><img src="{{image}}" /></a>'
           });
           feed.run();
