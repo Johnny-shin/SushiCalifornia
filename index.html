@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script type="text/javascript" src="path/to/instafeed.min.js"></script>
+    <script type="text/javascript" src="./js/instafeed.min.js"></script>
     <link rel="stylesheet" href="./css/index.css">
     <title>Sushi California Markham</title>
   </head>
@@ -69,6 +69,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   
     <!--insta test -->
+        <div id="insta-feed">
+          
+        </div>
     <script type="text/javascript">
       $(function(){ 
               // {{likes}} : 좋아요 갯수, {{image}} : 사진 url, {{caption}} : 게시물 텍스트 {{comments}} 뎃글수
@@ -95,7 +98,8 @@
         
         <script type="text/javascript">
           var feed = new Instafeed({
-              get: 'tagged',
+              get: 'user',
+              target : 'instafeed',
               tagName: 'awesome',
               clientId: '0d9889f1726a483699334996b85b7a61',
               template: '<a href="{{link}}"><img src="{{image}}" /></a>'
