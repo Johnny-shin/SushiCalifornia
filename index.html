@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" src="path/to/instafeed.min.js"></script>
     <link rel="stylesheet" href="./css/index.css">
     <title>Sushi California Markham</title>
   </head>
@@ -66,5 +67,41 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    <!--insta test -->
+    <script type="text/javascript">
+      $(function(){ 
+              // {{likes}} : 좋아요 갯수, {{image}} : 사진 url, {{caption}} : 게시물 텍스트 {{comments}} 뎃글수
+              var templates = '';
+              templates += '<a href="{{link}}" target="_blank"><img src="{{image}}" />{{caption}}</a>'
+              templates += '<div>{{caption}}</div>'
+              templates += '<div>{{likes}}</div>'
+              templates += '<div>{{comments}}</div>'
+      
+              var userFeed = new Instafeed({
+                  get: 'user',
+                  target: 'instagram-myfeed',
+                  tagName: 'awesome',
+                  clientId: '0d9889f1726a483699334996b85b7a61',
+                  userId: '6911797675', //accessToken에 앞번호 8자리
+                  accessToken: '6911797675.0d9889f.09b7867881154131906b4125cc008dbe',  
+                  sortBy: "most-recent",
+                  limit: 20,  //전체 항목들 갯수를 조절할수 있다.
+                  template: templates, 
+              });
+          userFeed.run();
+          }); 
+      </script>
+        
+        <script type="text/javascript">
+          var feed = new Instafeed({
+              get: 'tagged',
+              tagName: 'awesome',
+              clientId: '0d9889f1726a483699334996b85b7a61',
+              template: '<a href="{{link}}"><img src="{{image}}" /></a>'
+          });
+          feed.run();
+      </script>
+  
   </body>
 </html>
